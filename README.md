@@ -12,11 +12,8 @@ Complete source code for reproducing all experiments in the paper.
 1. [Architecture Overview](#architecture-overview)
 2. [Environment Setup](#environment-setup)
 3. [Data Preparation](#data-preparation)
-4. [Quick Start](#quick-start)
-5. [Reproducing Paper Results](#reproducing-paper-results)
-6. [Ablation Studies](#ablation-studies)
-7. [Project Structure](#project-structure)
-8. [Paper Results Summary](#paper-results-summary)
+4. [Project Structure](#project-structure)
+5. [Paper Results Summary](#paper-results-summary)
 
 ---
 
@@ -124,97 +121,6 @@ Press `F5` to start debugging with the selected configuration.
    ```bash
    python scripts/prepare_data.py --dataset ucf101
    ```
-
----
-
-## Quick Start
-
-### Dry Run (no data needed)
-```bash
-# Verify entire pipeline works
-python train.py --config configs/experiments/ntu60_cs_joint.yaml --dry_run --epochs 2
-```
-
-### Single Training Run
-```bash
-# NTU-60 Cross-Subject, joint training
-python train.py --config configs/experiments/ntu60_cs_joint.yaml --seed 42
-
-# Supervised only (no V-JEPA)
-python train.py --config configs/experiments/ntu60_cs_supervised.yaml
-
-# UCF-101 Split-1
-python train.py --config configs/experiments/ucf101_split1_joint.yaml
-```
-
-### Override Hyperparameters
-```bash
-python train.py --config configs/experiments/ntu60_cs_joint.yaml \
-    --alpha 0.5 --lr 1e-4 --epochs 50 --batch_size 8
-```
-
----
-
-## Reproducing Paper Results
-
-All paper numbers: **mean ± std over 3 runs** (seeds 42, 43, 44).
-
-### Table 2: NTU RGB+D 60/120
-```bash
-python run_experiments.py --experiments ntu60 --num_runs 3
-python run_experiments.py --experiments ntu120 --num_runs 3
-```
-
-### Table 3: UCF-101 (3-split average)
-```bash
-python run_experiments.py --experiments ucf101 --num_runs 3
-```
-
-### All Experiments at Once
-```bash
-python run_experiments.py --num_runs 3
-```
-
-### Evaluate a Checkpoint
-```bash
-python evaluate.py \
-    --config configs/experiments/ntu60_cs_joint.yaml \
-    --checkpoint checkpoints/ntu60_cs_joint_best.pth
-```
-
----
-
-## Ablation Studies
-
-### Table 5: Training Mode
-```bash
-python run_ablations.py --ablation training_mode --num_runs 3
-```
-
-### Table 6: Alpha (α) Sensitivity
-```bash
-python run_ablations.py --ablation alpha --num_runs 3
-```
-
-### Table 7: Scanning Direction
-```bash
-python run_ablations.py --ablation scan --num_runs 3
-```
-
-### Table 8: Classification Head
-```bash
-python run_ablations.py --ablation head --num_runs 3
-```
-
-### Table 9: Mask Ratio (ρ)
-```bash
-python run_ablations.py --ablation mask_ratio --num_runs 3
-```
-
-### All Ablations
-```bash
-python run_ablations.py --ablation all --num_runs 3
-```
 
 ---
 
