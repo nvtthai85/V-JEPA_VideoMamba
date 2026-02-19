@@ -139,9 +139,7 @@ hybrid_vjepa_videomamba/
 │       ├── ntu60_cv_joint.yaml
 │       ├── ntu120_csub_joint.yaml
 │       ├── ntu120_cset_joint.yaml
-│       ├── ucf101_split1_joint.yaml
-│       ├── ucf101_split2_joint.yaml
-│       └── ucf101_split3_joint.yaml
+│       └── ucf101_split1_joint.yaml
 ├── models/
 │   ├── mamba_block.py         # SelectiveSSM + MambaBlock + DropPath
 │   ├── videomamba.py          # VideoMamba backbone (bidirectional)
@@ -212,20 +210,6 @@ hybrid_vjepa_videomamba/
 | Batch size       | 16                                 |
 | AMP              | FP16                               |
 | Seeds            | 42, 43, 44                         |
-
----
-
-## Citation
-
-```bibtex
-@inproceedings{nguyen2025hybrid,
-  title={Hybrid V-JEPA and VideoMamba Architecture for Robust Video Action Recognition},
-  author={Nguyen, Thai and Supervisor, Name},
-  booktitle={LNCS Conference Proceedings},
-  year={2025},
-  publisher={Springer}
-}
-```
 
 ---
 
