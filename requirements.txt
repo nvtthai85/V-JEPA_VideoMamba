@@ -1,0 +1,17 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# Video loading (install at least one)
+decord>=0.6.0           # recommended: fast video decoding
+# opencv-python>=4.8.0  # fallback if decord unavailable
+
+# Optional: FLOPs measurement
+# fvcore>=0.1.5
+
+# Optional: experiment tracking
+# wandb>=0.15.0
+# tensorboard>=2.14.0

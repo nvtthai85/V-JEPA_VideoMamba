@@ -1,0 +1,16 @@
+# NTU RGB+D 60 — Cross-View — Joint (α=0.3)
+exp_name: "ntu60_cv_joint"
+dataset_name: "NTU-60 Cross-View"
+num_classes: 60
+alpha: 0.3
+bidirectional: true
+head_type: "attentive_probe"
+data_root: "./data/ntu60"
+train_annotation: "./data/ntu60/annotations/train_cv.txt"
+val_annotation: "./data/ntu60/annotations/val_cv.txt"
+epochs: 100
+batch_size: 16
+lr: 0.0005
+input_modality: "RGB"
+input_channels: 3
+checkpoint_name: "ntu60_cv_joint_best.pth"

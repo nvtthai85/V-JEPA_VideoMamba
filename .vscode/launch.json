@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Train: NTU-60 CS (Full)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "args": ["--config", "configs/experiments/ntu60_cs_joint.yaml"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Train: Dry Run (No GPU / No Data)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "args": ["--config", "configs/experiments/ntu60_cs_joint.yaml", "--dry_run", "--epochs", "2"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Ablation: Alpha (Dry Run)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_ablations.py",
+            "args": ["--ablation", "alpha", "--dry_run", "--epochs", "2", "--num_runs", "1"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Evaluate Checkpoint",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/evaluate.py",
+            "args": ["--config", "configs/experiments/ntu60_cs_joint.yaml", "--checkpoint", "checkpoints/ntu60_cs_joint_best.pth", "--dry_run"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
